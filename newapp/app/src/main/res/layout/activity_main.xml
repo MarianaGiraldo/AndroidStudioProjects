@@ -11,22 +11,22 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:background="@color/orange_sena">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp">
+            >
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/tam_logo"
+                android:layout_height="@dimen/tam_logo"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
                 android:layout_marginEnd="7dp"
                 android:contentDescription="@string/todo"
-                android:src="@drawable/senalogo"
+                android:src="@drawable/logosena_blanco"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints,ImageContrastCheck"
@@ -35,24 +35,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello World!"
-                android:textColor="#4DB6AC"
+                android:text="BootCamp_592"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/button">
-            </Button>
         </com.google.android.material.appbar.MaterialToolbar>
-
-
     </com.google.android.material.appbar.AppBarLayout>
 
 
