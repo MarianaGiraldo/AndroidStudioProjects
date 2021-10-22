@@ -3,15 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.30572916666666666" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_splash.xml" value="0.33967391304347827" />
-        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_home.xml" value="0.33967391304347827" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_agenda.xml" value="0.33" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_evento.xml" value="0.28958333333333336" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speaker_info.xml" value="0.28958333333333336" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers.xml" value="0.2755208333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

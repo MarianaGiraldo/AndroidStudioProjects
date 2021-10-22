@@ -1,12 +1,33 @@
 <resources>
-    <string name="app_name">new-app</string>
+    <string name="app_name">BootCamp_592</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button">Button</string>
     <string name="todo">TODO</string>
-    
+
     <string name="titulo_evento">¿Qué es BootCamp_592?</string>
     <string name="desc_evento">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.
     Maecenas scelerisque, lorem nec mollis ullamcorper, velit ligula vestibulum nisl, ac interdum velit lectus sed nibh. Nam vestibulum vitae arcu eget hendrerit. Pellentesque porta sollicitudin neque ac pharetra. Pellentesque eu lorem a turpis suscipit commodo.
     </string>
+    <string name="desc_video_home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.</string>
+
+    <string name="titulo_agenda">Agenda</string>
+    <string name="fecha1">22 Octubre</string>
+    <string name="fecha2">28 Octubre</string>
+    <string name="fecha3">30 Octubre</string>
+    <string name="desc_fecha">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius.</string>
+    <string name="ver_mas">Ver más...</string>
+
+    <string name="titulo_evento1">Título del evento</string>
+    <string name="desc_evento1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.
+    Maecenas scelerisque, lorem nec mollis ullamcorper, velit ligula vestibulum nisl, ac interdum velit lectus sed nibh. Nam vestibulum vitae arcu eget hendrerit. Pellentesque porta sollicitudin neque ac pharetra. Pellentesque eu lorem a turpis suscipit commodo.
+    </string>
+    <string name="speaker">Speaker</string>
+    <string name="name_speaker1">Mariana Giraldo</string>
+    <string name="name_speakers">Nombre Speaker</string>
+    <string name="mas_info">Más info...</string>
+    <string name="titulo_speakers">Speakers</string>
+
+    <string name="titulo_speaker">Speaker:</string>
+
 </resources>
