@@ -3,13 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <ScrollView
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        />
+        android:layout_width="match_parent"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/cornerCardHome"
+                android:elevation="@dimen/elevationCarHome"
+                android:layout_margin="@dimen/margin_home"
+                >
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/altoBanner"
+                        android:src="@drawable/BannerSacudete"
+                        android:contentDescription="@string/todo"
+                        android:background="@color/orange_sena"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/altoView"
+                        android:background="@color/cardview_dark_background"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_evento"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/titulo_evento"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="@dimen/margin_home"
+                        android:layout_marginEnd="@dimen/margin_home"
+                        android:layout_marginTop="@dimen/margin_home"
+                        android:textAlignment="center"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/desc_evento"
+                        android:textColor="@color/dark_gray"
+                        android:layout_marginStart="@dimen/margin_home"
+                        android:layout_marginEnd="@dimen/margin_home"
+                        android:layout_marginTop="@dimen/margin_home"
+                        android:textSize="@dimen/desc_evento"
+                        />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

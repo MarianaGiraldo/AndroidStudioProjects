@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tam_logo">60dp</dimen>
+
+    <dimen name="cornerCardHome">15dp</dimen>
+    <dimen name="elevationCarHome">10dp</dimen>
+    <dimen name="altoBanner">145dp</dimen>
+    <dimen name="altoView">3dp</dimen>
+    
+    <dimen name="margin_home">15dp</dimen>
+
+    <dimen name="titulo_evento">18sp</dimen>
+    <dimen name="desc_evento">13sp</dimen>
+</resources>
