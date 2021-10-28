@@ -1,11 +1,17 @@
 package com.example.new_app.ui
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.URLUtil
 import com.example.new_app.R
+import android.widget.VideoView
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,12 +28,17 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    var videoView: VideoView? = null
+    private val VIDEO_NAME = "falling_snow"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
+
     }
 
     override fun onCreateView(
@@ -36,6 +47,42 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    private fun getURI(videoname:String): Uri{
+        return if (URLUtil.isValidUrl(videoname)) {
+            //  an external URL
+            Uri.parse(videoname);
+        } else { //  a raw resource
+            Uri.parse("android.resource://" +
+                    "/raw/" + videoname);
+        }
+    }
+    private fun initPlayer() {
+        var videoUri:Uri = getURI(VIDEO_NAME)
+        videoView?.setVideoURI(videoUri)
+        videoView?.start()
+    }
+    private fun releasePlayer(){
+        videoView?.stopPlayback()
+    }
+    override fun onStop() {
+        super.onStop()
+        releasePlayer()
+    }
+    override fun onStart() {
+        super.onStart()
+        initPlayer()
+    }
+    override fun onPause() {
+        super.onPause()
+        videoView?.pause()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        videoView = view.findViewById(R.id.videoView)
+
     }
 
     companion object {
