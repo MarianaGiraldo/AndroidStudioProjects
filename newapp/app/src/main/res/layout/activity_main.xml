@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BootCamp_592"
+                    android:text="@string/app_name"
                     android:textColor="@color/white"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -54,35 +54,40 @@
             android:layout_height="wrap_content" >
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/height_toolbar_icons"
                 android:background="@color/white"
-                android:paddingStart="@dimen/padding_icon"
-                android:paddingEnd="@dimen/padding_icon"
                 >
-                <ImageView
-                    android:layout_width="@dimen/tam_icon"
-                    android:layout_height="@dimen/tam_icon"
-                    android:src="@drawable/ic_baseline_home_24"
-                    android:layout_marginStart="@dimen/margin_icon"
-                    android:layout_marginEnd="@dimen/margin_icon"/>
-                <ImageView
-                    android:layout_width="@dimen/tam_icon"
-                    android:layout_height="@dimen/tam_icon"
-                    android:src="@drawable/ic_baseline_menu_book_24"
-                    android:layout_marginStart="@dimen/margin_icon"
-                    android:layout_marginEnd="@dimen/margin_icon"/>
-                <ImageView
-                    android:layout_width="@dimen/tam_icon"
-                    android:layout_height="@dimen/tam_icon"
-                    android:src="@drawable/ic_baseline_people_24"
-                    android:layout_marginStart="@dimen/margin_icon"
-                    android:layout_marginEnd="@dimen/margin_icon"/>
-                <ImageView
-                    android:layout_width="@dimen/tam_icon"
-                    android:layout_height="@dimen/tam_icon"
-                    android:src="@drawable/ic_baseline_comment_24"
-                    android:layout_marginStart="@dimen/margin_icon"
-                    android:layout_marginEnd="@dimen/margin_icon"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_topiconos"
+                    android:layout_marginEnd="@dimen/marginx_icon">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/tam_icon"
+                        android:src="@drawable/ic_baseline_home_24"
+                        android:layout_weight="1"
+                        android:contentDescription="home icon" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/tam_icon"
+                        android:src="@drawable/ic_baseline_menu_book_24"
+                        android:layout_weight="1"
+                        android:contentDescription="agenda icon" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/tam_icon"
+                        android:src="@drawable/ic_baseline_people_24"
+                        android:layout_weight="1"
+                        android:contentDescription="speakers icon" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/tam_icon"
+                        android:src="@drawable/ic_baseline_comment_24"
+                        android:layout_weight="1"
+                        android:contentDescription="comments icon" />
+                </LinearLayout>
 
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
