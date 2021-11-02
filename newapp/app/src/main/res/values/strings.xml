@@ -34,5 +34,19 @@
     <string name="comment1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius.</string>
     <string name="agregar_comentario">Agregar comentario:</string>
     <string name="agregar_btn">Agregar</string>
+    <string name="hora_evento">01:00 pm</string>
+    <string name="nombre_del_expositor">Nombre del expositor</string>
+    <string name="tema">Tema</string>
+    <string name="banner_evento">Banner Evento</string>
+    <string name="descripcion_evento">Descripción del evento</string>
+    <string name="speaker_icon">speaker_icon</string>
+    <string name="img_evento">img_evento</string>
+    <string name="home_icon">home icon</string>
+    <string name="agenda_icon">agenda icon</string>
+    <string name="speakers_icon">speakers icon</string>
+    <string name="comments_icon">comments icon</string>
+    <string name="logo_sena">logo sena</string>
+    <string name="calendar_image">calendar image</string>
+    <string name="atras">Atrás</string>
 
 </resources>

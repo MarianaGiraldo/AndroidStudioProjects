@@ -36,7 +36,8 @@
                 <ImageView
                     android:layout_width="@dimen/width_calendar_agenda"
                     android:layout_height="@dimen/height_calendar_agenda"
-                    android:src="@drawable/calendar" />
+                    android:src="@drawable/calendar"
+                    android:contentDescription="@string/calendar_image" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

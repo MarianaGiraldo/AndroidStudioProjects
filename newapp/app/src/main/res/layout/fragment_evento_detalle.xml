@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.EventoDetalleFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Toolbar
+            android:id="@+id/detalleEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/hight_banner" >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bannerEvento"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/banner_evento" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gray"
+                        android:alpha="0.6" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo_evento1"
+                        android:textSize="@dimen/tit_evento_banner"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/cornerCardHome"
+                    android:elevation="@dimen/elevationCarHome"
+                    android:layout_margin="@dimen/margin_card_evento_detalle" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hora_evento"
+                            android:textSize="@dimen/tam_dets_evento"
+                            android:textColor="@color/black"
+                            android:textAlignment="center" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nombre_del_expositor"
+                            android:textSize="@dimen/tam_nombre_expositor"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textAlignment="center" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tema"
+                            android:textSize="@dimen/tam_dets_evento"
+                            android:textColor="@color/black"
+                            android:textAlignment="center" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/descripcion_evento"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textAlignment="center" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc_evento1"
+                            android:textSize="@dimen/tam_dets_evento"
+                            android:textColor="@color/black"
+                            android:textAlignment="center"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</FrameLayout>

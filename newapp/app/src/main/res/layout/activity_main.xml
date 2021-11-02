@@ -68,25 +68,25 @@
                         android:layout_height="@dimen/tam_icon"
                         android:src="@drawable/ic_baseline_home_24"
                         android:layout_weight="1"
-                        android:contentDescription="home icon" />
+                        android:contentDescription="@string/home_icon" />
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/tam_icon"
                         android:src="@drawable/ic_baseline_menu_book_24"
                         android:layout_weight="1"
-                        android:contentDescription="agenda icon" />
+                        android:contentDescription="@string/agenda_icon" />
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/tam_icon"
                         android:src="@drawable/ic_baseline_people_24"
                         android:layout_weight="1"
-                        android:contentDescription="speakers icon" />
+                        android:contentDescription="@string/speakers_icon" />
                     <ImageView
                         android:layout_width="0dp"
                         android:layout_height="@dimen/tam_icon"
                         android:src="@drawable/ic_baseline_comment_24"
                         android:layout_weight="1"
-                        android:contentDescription="comments icon" />
+                        android:contentDescription="@string/comments_icon" />
                 </LinearLayout>
 
             </com.google.android.material.appbar.MaterialToolbar>

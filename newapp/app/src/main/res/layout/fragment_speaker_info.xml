@@ -45,11 +45,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="@dimen/padding_speaker">
+                    android:padding="@dimen/padding_speaker"
+                    tools:ignore="UseCompoundDrawables">
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/height_evento_img"
-                        android:src="@drawable/ic_baseline_person_24" />
+                        android:src="@drawable/ic_baseline_person_24"
+                        android:contentDescription="@string/speaker_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -63,7 +65,7 @@
             <Button
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Atrás"
+                android:text="@string/atras"
                 android:background="@color/dark_green_sena"
                 android:layout_margin="@dimen/margin_Titulo_agenda" />
         </LinearLayout>
