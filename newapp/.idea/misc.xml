@@ -14,6 +14,20 @@
         <entry key="..\:/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers.xml" value="0.17481884057971014" />
         <entry key="..\:/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers_list.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/newapp/app/src/main/res/layout/item_speaker.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/activity_splash.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_agenda.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_comments.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_evento.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_evento_detalle.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_eventos_list.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_home.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_speaker_info.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_speakers.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/fragment_speakers_list.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/item_comment.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/item_evento.xml" value="0.23007246376811594" />
+        <entry key="..\:/Users/SENA/AndroidStudioProjects/AndroidStudioProjects-Mariana/newapp/app/src/main/res/layout/item_speaker.xml" value="0.23007246376811594" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.30572916666666666" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main2.xml" value="0.1671195652173913" />
@@ -27,7 +41,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

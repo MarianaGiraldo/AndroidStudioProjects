@@ -35,7 +35,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/bannerEvento"
+                        android:src="@drawable/banner_evento"
                         android:scaleType="centerCrop"
                         android:contentDescription="@string/banner_evento" />
                     <View

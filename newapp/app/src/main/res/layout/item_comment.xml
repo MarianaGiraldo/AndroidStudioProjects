@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:elevation="@dimen/elevationCarHome"
+    android:layout_marginStart="@dimen/margin_agenda"
+    android:layout_marginEnd="@dimen/margin_agenda"
+    android:layout_marginTop="@dimen/margin_Titulo_agenda"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_speaker">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            android:layout_weight="1"
+            android:contentDescription="@string/speaker_icon" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/comment1"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/desc_evento"
+            android:layout_weight="3"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

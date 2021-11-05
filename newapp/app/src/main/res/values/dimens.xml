@@ -39,4 +39,7 @@
     <dimen name="tam_nombre_expositor">28sp</dimen>
     <dimen name="tam_dets_evento">18sp</dimen>
 
+    <dimen name="view_item_evento">2dp</dimen>
+    <dimen name="tam_hora_item_evento">25sp</dimen>
+
 </resources>

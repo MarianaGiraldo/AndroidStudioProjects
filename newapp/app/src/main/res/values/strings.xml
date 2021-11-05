@@ -16,7 +16,7 @@
     <string name="fecha2">28 Octubre</string>
     <string name="fecha3">30 Octubre</string>
     <string name="desc_fecha">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius.</string>
-    <string name="ver_mas">Ver más...</string>
+    <string name="ver_mas">Ver más…</string>
 
     <string name="titulo_evento1">Título del evento</string>
     <string name="desc_evento1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.
@@ -25,7 +25,7 @@
     <string name="speaker">Speaker</string>
     <string name="name_speaker1">Mariana Giraldo</string>
     <string name="name_speakers">Nombre Speaker</string>
-    <string name="mas_info">Más info...</string>
+    <string name="mas_info">Más info…</string>
     <string name="titulo_speakers">Speakers</string>
 
     <string name="titulo_speaker">Speaker:</string>
@@ -48,5 +48,6 @@
     <string name="logo_sena">logo sena</string>
     <string name="calendar_image">calendar image</string>
     <string name="atras">Atrás</string>
+    <string name="floating_button">floating button</string>
 
 </resources>

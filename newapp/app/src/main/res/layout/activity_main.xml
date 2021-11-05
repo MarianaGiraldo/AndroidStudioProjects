@@ -96,4 +96,12 @@
             android:layout_height="@dimen/altoView"
             android:background="@color/dark_green_sena"/>
     </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/margin_home"
+        android:layout_marginBottom="@dimen/margin_home"
+        android:src="@drawable/logosena_blanco"
+        android:contentDescription="@string/floating_button" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
