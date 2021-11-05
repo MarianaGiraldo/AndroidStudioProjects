@@ -15,19 +15,15 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="2">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/tam_logo_splash"
-                    android:src="@drawable/logosena"
-                    android:layout_gravity="center_horizontal"
-                    android:contentDescription="@string/logo_sena" />
 
-        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/logosena"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/logo_sena"
+            android:layout_weight="2"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

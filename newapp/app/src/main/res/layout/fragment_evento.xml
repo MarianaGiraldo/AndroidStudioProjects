@@ -85,8 +85,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginStart="@dimen/margin_speaker"
-                        android:layout_marginEnd="@dimen/margin_speaker"
+                        android:layout_gravity="center_horizontal"
                         android:paddingBottom="@dimen/padding_speaker"
                         >
                         <ImageView

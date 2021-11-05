@@ -16,7 +16,7 @@
     <dimen name="titulo_evento">18sp</dimen>
     <dimen name="desc_evento">13sp</dimen>
 
-    <dimen name="tam_logo_splash">250dp</dimen>
+    <dimen name="tam_logo_splash">200dp</dimen>
 
     <dimen name="width_calendar_agenda">380dp</dimen>
     <dimen name="height_calendar_agenda">250dp</dimen>
