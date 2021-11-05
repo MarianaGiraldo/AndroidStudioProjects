@@ -25,18 +25,16 @@ private const val ARG_PARAM2 = "param2"
  */
 class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    var videoView: VideoView? = null
+    private var videoView: VideoView? = null
     private val VIDEO_NAME = "falling_snow"
+    private val PLAYBACK_TIME = "play_time"
+    private var currentPos = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-
+        if (savedInstanceState != null) {
+            currentPos = savedInstanceState.getInt(PLAYBACK_TIME)
         }
 
     }
@@ -49,18 +47,23 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    private fun getURI(videoname:String): Uri{
-        return if (URLUtil.isValidUrl(videoname)) {
+    private fun getURI(): Uri{
+        return if (URLUtil.isValidUrl(VIDEO_NAME)) {
             //  an external URL
-            Uri.parse(videoname);
+            Uri.parse(VIDEO_NAME)
         } else { //  a raw resource
             Uri.parse("android.resource://" +
-                    "/raw/" + videoname);
+                    "/raw/" + VIDEO_NAME)
         }
     }
     private fun initPlayer() {
-        var videoUri:Uri = getURI(VIDEO_NAME)
+        val videoUri:Uri = getURI()
         videoView?.setVideoURI(videoUri)
+        if (currentPos > 0) {
+            videoView?.seekTo(currentPos)
+        } else {
+            videoView?.seekTo(1)
+        }
         videoView?.start()
     }
     private fun releasePlayer(){
@@ -83,6 +86,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         videoView = view.findViewById(R.id.videoView)
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        videoView?.let { outState.putInt(PLAYBACK_TIME, it.currentPosition) }
     }
 
     companion object {
