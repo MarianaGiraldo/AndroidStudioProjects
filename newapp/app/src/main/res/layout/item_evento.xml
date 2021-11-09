@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/padding_speaker"
+        android:background="@drawable/shape_items"
         >
         <LinearLayout
             android:layout_width="0dp"

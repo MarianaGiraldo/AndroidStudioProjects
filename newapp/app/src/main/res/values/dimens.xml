@@ -41,5 +41,8 @@
 
     <dimen name="view_item_evento">2dp</dimen>
     <dimen name="tam_hora_item_evento">25sp</dimen>
+    <dimen name="marginb_main2">60dp</dimen>
+    <dimen name="padding_speakers">10dp</dimen>
+    <dimen name="padding_items">10dp</dimen>
 
 </resources>
