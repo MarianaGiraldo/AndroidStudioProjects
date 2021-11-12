@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tam_logo">60dp</dimen>
+    <dimen name="tam_logo">50dp</dimen>
     <dimen name="tam_icon">30dp</dimen>
     <dimen name="marginx_icon">10dp</dimen>
     <dimen name="margin_topiconos">5dp</dimen>
