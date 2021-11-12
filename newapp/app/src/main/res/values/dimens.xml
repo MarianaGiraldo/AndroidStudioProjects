@@ -32,7 +32,7 @@
     <dimen name="tam_desc_comentarios">20sp</dimen>
 
     <dimen name="tam_img_speaker_list">100dp</dimen>
-    <dimen name="tam_nombre_speaker_item">18sp</dimen>
+    <dimen name="tam_nombre_speaker_item">15sp</dimen>
     <dimen name="hight_banner">100dp</dimen>
     <dimen name="tit_evento_banner">40sp</dimen>
     <dimen name="margin_card_evento_detalle">10dp</dimen>
