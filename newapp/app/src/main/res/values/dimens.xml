@@ -44,5 +44,6 @@
     <dimen name="marginb_main2">60dp</dimen>
     <dimen name="padding_speakers">10dp</dimen>
     <dimen name="padding_items">10dp</dimen>
+    <dimen name="corners_items">15dp</dimen>
 
 </resources>

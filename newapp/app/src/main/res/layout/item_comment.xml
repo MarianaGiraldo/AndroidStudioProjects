@@ -28,7 +28,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/comment1"
-            android:textColor="@color/dark_gray"
             android:textSize="@dimen/desc_evento"
             android:layout_weight="3"
             />

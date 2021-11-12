@@ -4,7 +4,7 @@
         android:color="@color/dark_green_sena"
         android:width="1dp" />
     <corners
-        android:radius="@dimen/cornerCardHome" />
+        android:radius="@dimen/corners_items" />
     <padding
         android:top="@dimen/padding_items"
         android:bottom="@dimen/padding_items"

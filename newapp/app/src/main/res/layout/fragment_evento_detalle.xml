@@ -69,7 +69,6 @@
                             android:layout_height="wrap_content"
                             android:text="@string/hora_evento"
                             android:textSize="@dimen/tam_dets_evento"
-                            android:textColor="@color/black"
                             android:textAlignment="center" />
                         <TextView
                             android:layout_width="match_parent"
@@ -77,21 +76,18 @@
                             android:text="@string/nombre_del_expositor"
                             android:textSize="@dimen/tam_nombre_expositor"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             android:textAlignment="center" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/tema"
                             android:textSize="@dimen/tam_dets_evento"
-                            android:textColor="@color/black"
                             android:textAlignment="center" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/descripcion_evento"
                             android:textSize="18sp"
-                            android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textAlignment="center" />
                         <TextView
@@ -99,7 +95,6 @@
                             android:layout_height="wrap_content"
                             android:text="@string/desc_evento1"
                             android:textSize="@dimen/tam_dets_evento"
-                            android:textColor="@color/black"
                             android:textAlignment="center"
                             android:layout_margin="5dp"/>
                     </LinearLayout>
@@ -119,7 +114,6 @@
                             android:text="@string/ubicacion_evento_detalle"
                             android:textStyle="bold"
                             android:textSize="@dimen/tam_nombre_expositor"
-                            android:textColor="@color/black"
                             android:textAlignment="center" />
 
                         <com.google.android.gms.maps.MapView
