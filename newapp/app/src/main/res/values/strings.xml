@@ -8,6 +8,8 @@
     <string name="desc_evento">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.
     Maecenas scelerisque, lorem nec mollis ullamcorper, velit ligula vestibulum nisl, ac interdum velit lectus sed nibh. Nam vestibulum vitae arcu eget hendrerit. Pellentesque porta sollicitudin neque ac pharetra. Pellentesque eu lorem a turpis suscipit commodo.
     </string>
+    <string name="atras">Atrás</string>
+    <string name="floating_button">floating button</string>
     <string name="desc_video_home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.</string>
 
     <string name="titulo_agenda">Agenda</string>
@@ -33,6 +35,7 @@
     <string name="comment1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius.</string>
     <string name="agregar_comentario">Agregar comentario:</string>
     <string name="agregar_btn">Agregar</string>
+
     <string name="hora_evento">01:00 pm</string>
     <string name="nombre_del_expositor">Nombre del expositor</string>
     <string name="tema">Tema</string>
@@ -40,13 +43,13 @@
     <string name="descripcion_evento">Descripción del evento</string>
     <string name="speaker_icon">speaker_icon</string>
     <string name="img_evento">img_evento</string>
+    <string name="ubicacion_evento_detalle">Ubicación</string>
+
     <string name="home_icon">home icon</string>
     <string name="agenda_icon">agenda icon</string>
     <string name="speakers_icon">speakers icon</string>
     <string name="comments_icon">comments icon</string>
     <string name="logo_sena">logo sena</string>
     <string name="calendar_image">calendar image</string>
-    <string name="atras">Atrás</string>
-    <string name="floating_button">floating button</string>
 
 </resources>
