@@ -10,7 +10,7 @@
     <dimen name="elevationCarHome">10dp</dimen>
     <dimen name="altoBanner">145dp</dimen>
     <dimen name="altoView">3dp</dimen>
-    
+
     <dimen name="margin_home">15dp</dimen>
 
     <dimen name="titulo_evento">18sp</dimen>

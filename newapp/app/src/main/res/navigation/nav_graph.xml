@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/nav_graph">
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nHome">
 
+    <fragment
+        android:id="@+id/nHome"
+        android:name="com.example.new_app.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nHome_to_nAgenda2"
+            app:destination="@id/nAgenda" />
+    </fragment>
+    <fragment
+        android:id="@+id/nAgenda"
+        android:name="com.example.new_app.ui.EventosListFragment"
+        android:label="fragment_eventos_list"
+        tools:layout="@layout/fragment_eventos_list" >
+        <action
+            android:id="@+id/action_nAgenda_to_nSpeakers"
+            app:destination="@id/nSpeakers" />
+        <action
+            android:id="@+id/action_nAgenda_to_fragment_evento_detalle"
+            app:destination="@id/fragment_evento_detalle" />
+    </fragment>
+    <fragment
+        android:id="@+id/nSpeakers"
+        android:name="com.example.new_app.ui.SpeakersListFragment"
+        android:label="fragment_speakers_list"
+        tools:layout="@layout/fragment_speakers_list" >
+        <action
+            android:id="@+id/action_nSpeakers_to_nComments"
+            app:destination="@id/nComments" />
+        <action
+            android:id="@+id/action_nSpeakers_to_speakerInfoFragment"
+            app:destination="@id/fragment_speaker_info" />
+    </fragment>
+    <fragment
+        android:id="@+id/nComments"
+        android:name="com.example.new_app.ui.CommentsFragment"
+        android:label="fragment_comments_list"
+        tools:layout="@layout/fragment_comments" />
+    <dialog
+        android:id="@+id/fragment_evento_detalle"
+        android:name="com.example.new_app.ui.EventoDetalleFragment"
+        android:label="fragment_evento_detalle"
+        tools:layout="@layout/fragment_evento_detalle" />
+    <dialog
+        android:id="@+id/fragment_speaker_info"
+        android:name="com.example.new_app.ui.SpeakerInfoFragment"
+        android:label="fragment_speaker_info"
+        tools:layout="@layout/fragment_speaker_info" />
 </navigation>

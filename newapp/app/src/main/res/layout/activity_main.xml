@@ -7,68 +7,80 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange_sena">
-
-            <com.google.android.material.appbar.MaterialToolbar
+            android:orientation="vertical">
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
+                android:background="@color/orange_sena">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="@dimen/tam_logo"
-                    android:layout_height="@dimen/tam_logo"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginEnd="7dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/logosena_blanco"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints,ImageContrastCheck"
-                    tools:layout_editor_absoluteY="131dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    >
 
-            </com.google.android.material.appbar.MaterialToolbar>
-        </com.google.android.material.appbar.AppBarLayout>
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/tam_logo"
+                        android:layout_height="@dimen/tam_logo"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/logosena_blanco"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints,ImageContrastCheck"
+                        tools:layout_editor_absoluteY="131dp" />
 
-        <RelativeLayout
-        android:id="@+id/rLMain"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bNMenu"
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:id="@+id/rLMain"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
-                app:itemIconSize="20dp"
-                app:menu="@menu/bt_menu"
-                />
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bNMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    app:itemIconSize="20dp"
+                    app:menu="@menu/bt_menu" />
 
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/altoView"
-            android:background="@color/dark_green_sena"/>
-    </LinearLayout>
+            </RelativeLayout>
+            <View
+                android:id="@+id/nav_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/altoView"
+                android:background="@color/dark_green_sena" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph" />
+        </LinearLayout>
+    </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
