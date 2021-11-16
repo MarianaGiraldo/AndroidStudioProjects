@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -49,48 +49,21 @@
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <com.google.android.material.appbar.MaterialToolbar
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_toolbar_icons"
-                android:background="@color/white"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/margin_topiconos"
-                    android:layout_marginEnd="@dimen/marginx_icon">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/tam_icon"
-                        android:src="@drawable/ic_baseline_home_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/home_icon" />
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/tam_icon"
-                        android:src="@drawable/ic_baseline_menu_book_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/agenda_icon" />
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/tam_icon"
-                        android:src="@drawable/ic_baseline_people_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/speakers_icon" />
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/tam_icon"
-                        android:src="@drawable/ic_baseline_comment_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/comments_icon" />
-                </LinearLayout>
+        <RelativeLayout
+        android:id="@+id/rLMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-            </com.google.android.material.appbar.MaterialToolbar>
-        </com.google.android.material.appbar.AppBarLayout>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bNMenu"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                app:itemIconSize="20dp"
+                app:menu="@menu/bt_menu"
+                />
+
+        </RelativeLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/altoView"

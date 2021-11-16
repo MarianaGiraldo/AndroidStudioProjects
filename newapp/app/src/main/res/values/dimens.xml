@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tam_logo">60dp</dimen>
+    <dimen name="tam_logo">50dp</dimen>
     <dimen name="tam_icon">30dp</dimen>
     <dimen name="marginx_icon">10dp</dimen>
     <dimen name="margin_topiconos">5dp</dimen>
@@ -32,7 +32,7 @@
     <dimen name="tam_desc_comentarios">20sp</dimen>
 
     <dimen name="tam_img_speaker_list">100dp</dimen>
-    <dimen name="tam_nombre_speaker_item">18sp</dimen>
+    <dimen name="tam_nombre_speaker_item">15sp</dimen>
     <dimen name="hight_banner">100dp</dimen>
     <dimen name="tit_evento_banner">40sp</dimen>
     <dimen name="margin_card_evento_detalle">10dp</dimen>
@@ -44,5 +44,6 @@
     <dimen name="marginb_main2">60dp</dimen>
     <dimen name="padding_speakers">10dp</dimen>
     <dimen name="padding_items">10dp</dimen>
+    <dimen name="corners_items">15dp</dimen>
 
 </resources>

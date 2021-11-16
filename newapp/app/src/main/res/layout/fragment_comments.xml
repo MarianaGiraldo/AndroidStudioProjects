@@ -29,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/desc_comentarios"
-                android:textColor="@color/black"
                 android:textSize="@dimen/tam_desc_comentarios"
                 android:layout_marginStart="@dimen/margin_agenda"/>
 
@@ -57,7 +56,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/comment1"
-                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/desc_evento"
                         android:layout_weight="3"
                         />
@@ -86,7 +84,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/comment1"
-                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/desc_evento"
                         android:layout_weight="3"
                         />
@@ -115,7 +112,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/comment1"
-                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/desc_evento"
                         android:layout_weight="3"
                         />
@@ -126,7 +122,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/agregar_comentario"
-                android:textColor="@color/black"
                 android:layout_marginStart="@dimen/margin_agenda"
                 android:layout_marginTop="@dimen/margin_agenda"
                 android:textSize="18sp" />

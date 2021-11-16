@@ -43,7 +43,6 @@
                         android:text="@string/titulo_evento"
                         android:textStyle="bold"
                         android:textSize="@dimen/titulo_evento"
-                        android:textColor="@color/black"
                         android:layout_marginStart="@dimen/margin_home"
                         android:layout_marginEnd="@dimen/margin_home"
                         android:layout_marginTop="@dimen/margin_home"
@@ -53,7 +52,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/desc_evento"
-                        android:textColor="@color/dark_gray"
                         android:layout_margin="@dimen/margin_home"
                         android:textSize="@dimen/desc_evento"
                         />
@@ -81,7 +79,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/desc_video_home"
-                        android:textColor="@color/dark_gray"
                         android:layout_margin="@dimen/margin_home"
                         android:textSize="@dimen/desc_evento"
                         />
