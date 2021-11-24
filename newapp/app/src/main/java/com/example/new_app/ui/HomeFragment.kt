@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
     private var videoView: VideoView? = null
-    private val VIDEO_NAME = "falling_snow"
+    private val VIDEO_NAME = "https://www.youtube.com/watch?v=VBuhsohLxkE"
     private val PLAYBACK_TIME = "play_time"
     private var currentPos = 0
 
