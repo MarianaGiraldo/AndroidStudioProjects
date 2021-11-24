@@ -51,5 +51,9 @@
     <string name="comments_icon">comments icon</string>
     <string name="logo_sena">logo sena</string>
     <string name="calendar_image">calendar image</string>
+    <string name="home">Home</string>
+    <string name="agenda">Agenda</string>
+    <string name="speakers">Speakers</string>
+    <string name="comments">Comments</string>
 
 </resources>
