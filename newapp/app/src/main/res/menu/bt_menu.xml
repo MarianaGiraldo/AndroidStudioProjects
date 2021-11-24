@@ -2,22 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nHome"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/ic_baseline_home_24"
         />
     <item
         android:id="@+id/nAgenda"
-        android:title="Agenda"
+        android:title="@string/agenda"
         android:icon="@drawable/ic_baseline_menu"
-        android:onClick=""
         />
     <item
         android:id="@+id/nSpeakers"
-        android:title="Speakers"
+        android:title="@string/speakers"
         android:icon="@drawable/ic_baseline_people_24" />
     <item
         android:id="@+id/nComments"
-        android:title="Comments"
+        android:title="@string/comments"
         android:icon="@drawable/ic_baseline_comment_24" />
 
 </menu>

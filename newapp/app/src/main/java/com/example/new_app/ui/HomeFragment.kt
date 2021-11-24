@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
             //  an external URL
             Uri.parse(VIDEO_NAME)
         } else { //  a raw resource
-            Uri.parse("android.resource://" +
+            Uri.parse("android.resource:/com.example.new_app" +
                     "/raw/" + VIDEO_NAME)
         }
     }
