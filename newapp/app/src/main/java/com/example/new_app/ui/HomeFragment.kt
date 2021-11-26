@@ -7,16 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.URLUtil
+import android.widget.MediaController
+import android.widget.Toast
 import com.example.new_app.R
 import android.widget.VideoView
 
 
-
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -24,18 +20,30 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
 
     private var videoView: VideoView? = null
-    private val VIDEO_NAME = "https://www.youtube.com/watch?v=VBuhsohLxkE"
+    private val VIDEO_NAME = "falling_snow"
     private val PLAYBACK_TIME = "play_time"
     private var currentPos = 0
+    private var mediaControls: MediaController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState != null) {
             currentPos = savedInstanceState.getInt(PLAYBACK_TIME)
         }
+
+        if (mediaControls == null) {
+            // creating an object of media controller class
+            mediaControls = MediaController(this.activity)
+
+            // set the anchor view for the video view
+            mediaControls!!.setAnchorView(this.videoView)
+        }
+
+        // set the media controller for video view
+        videoView?.setMediaController(this.mediaControls)
+        this.mediaControls!!.setAnchorView(videoView)
 
     }
 
@@ -52,8 +60,8 @@ class HomeFragment : Fragment() {
             //  an external URL
             Uri.parse(VIDEO_NAME)
         } else { //  a raw resource
-            Uri.parse("android.resource:/com.example.new_app" +
-                    "/raw/" + VIDEO_NAME)
+            Uri.parse("android.resource://com.example.new_app" +
+                    "/" + R.raw.falling_snow)
         }
     }
     private fun initPlayer() {
@@ -64,6 +72,7 @@ class HomeFragment : Fragment() {
         } else {
             videoView?.seekTo(1)
         }
+        videoView?.requestFocus()
         videoView?.start()
     }
     private fun releasePlayer(){
@@ -86,6 +95,20 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         videoView = view.findViewById(R.id.videoView)
 
+        // display a toast message
+        // after the video is completed
+        videoView!!.setOnCompletionListener {
+            Toast.makeText(this.activity, "Video completed",
+                Toast.LENGTH_LONG).show()
+        }
+
+        // display a toast message if any
+        // error occurs while playing the video
+        videoView!!.setOnErrorListener { _, _, _ ->
+            Toast.makeText(this.activity, "An Error Occurred " +
+                    "While Playing Video !!!", Toast.LENGTH_LONG).show()
+            false
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -98,18 +121,13 @@ class HomeFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
+         *
          */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
             }
     }
 }
