@@ -26,33 +26,11 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:orientation="vertical">
-                    <ImageView
-                        android:id="@+id/imagen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
 
                     <com.limerse.slider.ImageCarousel
                         android:id="@+id/carousel"
                         android:layout_width="match_parent"
                         android:layout_height="200dp" />
-
-                    <!--<com.synnapps.carouselview.CarouselView
-                        android:id="@+id/carouselView"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        app:fillColor="#FFFFFFFF"
-                        app:pageColor="#00000000"
-                        app:radius="6dp"
-                        app:slideInterval="3000"
-                        app:strokeColor="#FF777777"
-                        app:strokeWidth="1dp"/>
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/altoBanner"
-                        android:src="@drawable/bannersacudete"
-                        android:contentDescription="@string/todo"
-                        android:background="@color/orange_sena"
-                        /> -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/altoView"

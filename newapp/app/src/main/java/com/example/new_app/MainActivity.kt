@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.MediaController
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
@@ -19,10 +21,6 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
-import com.limerse.slider.ImageCarousel
-import com.limerse.slider.model.CarouselItem
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
 
 import org.json.JSONArray
 import org.json.JSONObject
@@ -30,74 +28,12 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var remoteConfig: FirebaseRemoteConfig
-    private var sampleImages = intArrayOf(
-        R.drawable.img_1,
-        R.drawable.img_2,
-        R.drawable.img_3,
-        R.drawable.img_4
-    )
+    private var videoView: VideoView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*
-        val carouselView: CarouselView = findViewById(R.id.carouselView)
-        carouselView.pageCount = sampleImages.size;
-        carouselView.setImageListener(imageListener);
-        */
-        //val carousel : ImageView = findViewById(R.id.imagen)
 
-    // Register lifecycle. For activity this will be lifecycle/getLifecycle() and for fragment it will be viewLifecycleOwner/getViewLifecycleOwner().
-        //carousel.registerLifecycle(lifecycle)
-
-        val list = mutableListOf<CarouselItem>()
-
-        // Image URL with caption
-        list.add(
-            CarouselItem(
-                imageUrl = "https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?w=1080",
-                caption = "Photo by Aaron Wu on Unsplash"
-            )
-        )
-
-        // Just image URL
-        list.add(
-            CarouselItem(
-                imageUrl = "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1080"
-            )
-        )
-
-        // Image URL with header
-        val headers = mutableMapOf<String, String>()
-        headers["header_key"] = "header_value"
-
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_1,
-                headers = headers
-            )
-        )
-
-        // Image drawable with caption
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_2,
-                caption = "Photo by Kimiya Oveisi on Unsplash"
-            )
-        )
-
-        // Just image drawable
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_3
-            )
-        )
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_4
-            )
-        )
-        //carousel.setData(list)
 
         //Remote Config Firebase
         remoteConfig = Firebase.remoteConfig
@@ -163,6 +99,7 @@ class MainActivity : AppCompatActivity() {
             speaker.image = aux.getString("image")
             speaker.category = aux.getInt("category")
 
+            /* Subir documento a Firebase
             firebaseFireStore.collection("speakers").document().set(speaker)
                 .addOnSuccessListener {
                 Log.d("SpeakerDocument", "DocumentSnapshot added ")
@@ -170,6 +107,8 @@ class MainActivity : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     Log.w("TAG", "Error adding document", e)
                 }
+
+             */
         }
 
         for(i in 0 until jsonArr2.length()){
@@ -186,14 +125,19 @@ class MainActivity : AppCompatActivity() {
 
             conference.speaker = aux.getString("speaker")
 
-            firebaseFireStore.collection("conferences").document().set(conference)
+            //firebaseFireStore.collection("conferences").document().set(conference)
         }
 
+
+        this.videoView = findViewById(R.id.videoView)
+        val controller = MediaController(this).also {
+            it.setMediaPlayer(this.videoView)
+            it.setAnchorView(this.videoView)
+        }
+        this.videoView?.setMediaController(controller)
+
     }
 
-    var imageListener: ImageListener = ImageListener { position, imageView -> // You can use Glide or Picasso here
-        imageView.setImageResource(sampleImages[position])
-    }
 
 }
 

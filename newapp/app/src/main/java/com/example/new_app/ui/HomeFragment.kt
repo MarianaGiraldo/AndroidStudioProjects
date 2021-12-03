@@ -7,16 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.URLUtil
-import android.widget.ImageView
 import android.widget.MediaController
 import android.widget.Toast
 import com.example.new_app.R
 import android.widget.VideoView
-import androidx.constraintlayout.helper.widget.Carousel
 import com.limerse.slider.ImageCarousel
 import com.limerse.slider.model.CarouselItem
-import com.synnapps.carouselview.CarouselView
-import com.synnapps.carouselview.ImageListener
 
 
 /**
@@ -30,36 +26,33 @@ class HomeFragment : Fragment() {
     private val VIDEO_NAME = "falling_snow"
     private val PLAYBACK_TIME = "play_time"
     private var currentPos = 0
-    private var mediaControls: MediaController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState != null) {
             currentPos = savedInstanceState.getInt(PLAYBACK_TIME)
         }
-        /*
-        val carouselView: CarouselView? = view?.findViewById(R.id.carouselView)
-        carouselView?.pageCount = sampleImages.size;
-        carouselView?.setImageListener(imageListener);
-        */
 
-        if (mediaControls == null) {
-            // creating an object of media controller class
-            mediaControls = MediaController(this.activity)
-
-            // set the anchor view for the video view
-            mediaControls!!.setAnchorView(this.videoView)
+        val controller = MediaController(this.activity).also {
+            it.setMediaPlayer(this.videoView)
         }
+        this.videoView?.setMediaController(controller)
+
+        /*
+        // creating an object of media controller class
+        var mediaControls = MediaController(this.activity)
+
+        // set the anchor view for the video view
+        mediaControls!!.setAnchorView(this.videoView)
+
 
         // set the media controller for video view
-        videoView?.setMediaController(this.mediaControls)
-        this.mediaControls!!.setAnchorView(videoView)
+        videoView?.setMediaController(mediaControls)
+        mediaControls!!.setAnchorView(videoView)
 
+         */
     }
-/*
-    private var imageListener: ImageListener = ImageListener { position, imageView ->
-        imageView.setImageResource(sampleImages[position])
-    } */
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -107,7 +100,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        videoView = view.findViewById(R.id.videoView)
+        this.videoView = view.findViewById(R.id.videoView)
 
         val carousel : ImageCarousel = view.findViewById(R.id.carousel)
         // Register lifecycle. For activity this will be lifecycle/getLifecycle() and for fragment it will be viewLifecycleOwner/getViewLifecycleOwner().
@@ -116,46 +109,26 @@ class HomeFragment : Fragment() {
 
         // Image URL with header
 
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_1,
-                caption = "Comienzo BootCamp"
-            )
-        )
+        list += CarouselItem(imageDrawable = R.drawable.img_1, caption = "Comienzo BootCamp")
 
         // Image drawable with caption
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_2,
-                caption = "BootCamp y SENA Digital"
-            )
-        )
+        list += CarouselItem(imageDrawable = R.drawable.img_2, caption = "BootCamp y SENA Digital")
 
         // Just image drawable
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_3
-            )
-        )
-        list.add(
-            CarouselItem(
-                imageDrawable = R.drawable.img_4
-            )
-        )
+        list += CarouselItem(imageDrawable = R.drawable.img_3)
+        list += CarouselItem(imageDrawable = R.drawable.img_4)
         carousel.setData(list)
-
-
 
         // display a toast message
         // after the video is completed
-        videoView!!.setOnCompletionListener {
+        this.videoView!!.setOnCompletionListener {
             Toast.makeText(this.activity, "Video completed",
                 Toast.LENGTH_LONG).show()
         }
 
         // display a toast message if any
         // error occurs while playing the video
-        videoView!!.setOnErrorListener { _, _, _ ->
+        this.videoView!!.setOnErrorListener { _, _, _ ->
             Toast.makeText(this.activity, "An Error Occurred " +
                     "While Playing Video !!!", Toast.LENGTH_LONG).show()
             false
