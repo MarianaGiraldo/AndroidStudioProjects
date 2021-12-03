@@ -30,7 +30,7 @@
                     <com.limerse.slider.ImageCarousel
                         android:id="@+id/carousel"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp" />
+                        android:layout_height="190dp" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/altoView"

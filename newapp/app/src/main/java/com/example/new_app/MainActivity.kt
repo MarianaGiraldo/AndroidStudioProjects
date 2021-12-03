@@ -1,21 +1,23 @@
 package com.example.new_app
 
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.ImageView
+import android.view.MenuItem
 import android.widget.MediaController
+import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.*
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
-/*
-import com.example.new_app.databinding.ActivityMainBinding
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
-*/
-
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -29,6 +31,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     private lateinit var remoteConfig: FirebaseRemoteConfig
     private var videoView: VideoView? = null
+    private lateinit var appBarConfiguration : AppBarConfiguration
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +40,12 @@ class MainActivity : AppCompatActivity() {
 
 
         //Remote Config Firebase
-        remoteConfig = Firebase.remoteConfig
+        this.remoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
             minimumFetchIntervalInSeconds = 3600
         }
-        remoteConfig.setConfigSettingsAsync(configSettings)
-        remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+        this.remoteConfig.setConfigSettingsAsync(configSettings)
+        this.remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
 
         //Creación de documentos para FireStore
         val jsonArr = JSONArray(
@@ -86,7 +90,7 @@ class MainActivity : AppCompatActivity() {
                     ]"""
         )
 
-        val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
+        //val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
         for(i in 0 until jsonArr.length()){
             val aux = jsonArr.get(i) as JSONObject
@@ -99,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             speaker.image = aux.getString("image")
             speaker.category = aux.getInt("category")
 
-            /* Subir documento a Firebase
+            /*
             firebaseFireStore.collection("speakers").document().set(speaker)
                 .addOnSuccessListener {
                 Log.d("SpeakerDocument", "DocumentSnapshot added ")
@@ -128,7 +132,7 @@ class MainActivity : AppCompatActivity() {
             //firebaseFireStore.collection("conferences").document().set(conference)
         }
 
-
+        //Intento controles video
         this.videoView = findViewById(R.id.videoView)
         val controller = MediaController(this).also {
             it.setMediaPlayer(this.videoView)
@@ -136,6 +140,55 @@ class MainActivity : AppCompatActivity() {
         }
         this.videoView?.setMediaController(controller)
 
+
+
+        //Navigation
+        val toolbar = findViewById<Toolbar>(R.id.toolbar).apply {
+            setSupportActionBar(this)
+        }
+
+        val host: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
+
+        // Set up Action Bar
+        val navController = host.navController
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        setupActionBar(navController, appBarConfiguration)
+
+        setupBottomNavMenu(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            val dest: String = try {
+                resources.getResourceName(destination.id)
+            } catch (e: Resources.NotFoundException) {
+                destination.id.toString()
+            }
+
+            Toast.makeText(this@MainActivity, "Navigated to $dest",
+                Toast.LENGTH_SHORT).show()
+            Log.d("NavigationActivity", "Navigated to $dest")
+        }
+
+    }
+    private fun setupBottomNavMenu(navController: NavController) {
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bNMenu)
+        bottomNav?.setupWithNavController(navController)
+    }
+
+    private fun setupActionBar(navController: NavController,
+                               appBarConfig : AppBarConfiguration) {
+        setupActionBarWithNavController(navController, appBarConfig)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
+                || super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.nav_host_fragment).navigateUp(appBarConfiguration)
     }
 
 
