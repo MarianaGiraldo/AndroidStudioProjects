@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //Navigation
-        val toolbar = findViewById<Toolbar>(R.id.toolbar).apply {
+        findViewById<Toolbar>(R.id.toolbar).apply {
             setSupportActionBar(this)
         }
 

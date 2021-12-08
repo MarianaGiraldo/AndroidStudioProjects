@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
     android:elevation="@dimen/elevationCarHome"
@@ -23,21 +23,40 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="@string/hora_evento"
-                android:textSize="@dimen/tam_hora_item_evento"
-                android:textStyle="bold"
-                android:textAlignment="center"
+                android:orientation="horizontal"
                 android:layout_weight="5"
-                tools:ignore="NestedWeights" />
+                android:layout_gravity="center_vertical"
+                tools:ignore="NestedWeights">
+                <TextView
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hora_evento"
+                    android:textSize="@dimen/tam_hora_item_evento"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                     />
+                <TextView
+                    android:id="@+id/am_pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/am"
+                    android:textSize="@dimen/tam_hora_item_evento"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@color/dark_green_sena"
                 android:layout_weight="0.4"/>
             <TextView
+                android:id="@+id/fecha_evento"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="@string/fecha1"
@@ -56,6 +75,7 @@
             android:orientation="vertical"
             android:layout_weight="2">
             <TextView
+                android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_evento1"
@@ -63,6 +83,7 @@
                 android:textSize="@dimen/titulo_evento"
                 android:layout_marginStart="@dimen/margin_agenda" />
             <TextView
+                android:id="@+id/desc_evento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/desc_fecha"
