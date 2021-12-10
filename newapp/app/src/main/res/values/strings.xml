@@ -56,5 +56,6 @@
     <string name="speakers">Speakers</string>
     <string name="comments">Comments</string>
     <string name="am">am</string>
+    <string name="user_name">User name</string>
 
 </resources>

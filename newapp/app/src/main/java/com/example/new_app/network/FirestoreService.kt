@@ -1,5 +1,7 @@
 package com.example.new_app.network
 
+import android.util.Log
+import com.example.new_app.models.Comment
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
 import com.google.firebase.firestore.FirebaseFirestore //conection
@@ -35,11 +37,31 @@ class FirestoreService {
             .get()
             .addOnSuccessListener {
                     result ->
-                for (doc in result){
+                for (doc in result) {
                     val list = result.toObjects(Speaker::class.java)
                     callback.onSuccess(list)
                     break
                 }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("GetSpeakers", "Error getting documents: ", exception)
+            }
+    }
+
+    fun getComments(callback: Callback<List<Comment>>){
+        firebaseFirestore.collection("comments")
+            .orderBy("name")
+            .get()
+            .addOnSuccessListener {
+                    result ->
+                for (doc in result){
+                    val list = result.toObjects(Comment::class.java)
+                    callback.onSuccess(list)
+                    break
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("GetComments", "Error getting documents: ", exception)
             }
     }
 

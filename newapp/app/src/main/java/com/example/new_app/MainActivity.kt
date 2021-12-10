@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import com.example.new_app.models.Comment
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -89,6 +90,20 @@ class MainActivity : AppCompatActivity() {
                      }
                     ]"""
         )
+        val jsonArr3 = JSONArray(
+            """[
+                    {
+                     "user_image" : "imagePath", 
+                     "user_name" : "Mariana Giraldo", 
+                     "comment_text" : "Un evento muy enriquecedor con temas excelentes"
+                     },
+                    {
+                     "user_image" : "imagePath", 
+                     "user_name" : "Jose Milton", 
+                     "comment_text" : "Otro evento muy enriquecedor con temas excelentes"
+                     }
+                    ]"""
+        )
 
         //val firebaseFireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
@@ -113,6 +128,24 @@ class MainActivity : AppCompatActivity() {
                 }
 
              */
+        }
+        for(i in 0 until jsonArr3.length()){
+            val aux = jsonArr3.get(i) as JSONObject
+            val comment= Comment()
+            comment.user_image = aux.getString("user_image")
+            comment.user_name = aux.getString("user_name")
+            comment.comment_text = aux.getString("comment_text")
+            /*
+            firebaseFireStore.collection("comments").document().set(comment)
+                .addOnSuccessListener {
+                Log.d("CommentDocument", "Document added ")
+                }
+                .addOnFailureListener { e ->
+                    Log.w("TAG", "Error adding document", e)
+                }
+
+             */
+
         }
 
         for(i in 0 until jsonArr2.length()){

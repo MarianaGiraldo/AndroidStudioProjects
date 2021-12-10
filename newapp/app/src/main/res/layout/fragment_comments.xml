@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CommentsFragment">
@@ -31,11 +30,14 @@
                 android:text="@string/desc_comentarios"
                 android:textSize="@dimen/tam_desc_comentarios"
                 android:layout_marginStart="@dimen/margin_agenda"/>
-            <fragment
+            <androidx.fragment.app.FragmentContainerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_comments_list"
-                android:layout_marginHorizontal="@dimen/margin_home" />
+                android:layout_marginHorizontal="@dimen/margin_home"
+                android:id="@+id/comments_list"
+                android:tag="comments_recycler"
+                android:name="com.example.new_app.ui.CommentsListFragment"/>
 
             <!--
             <androidx.cardview.widget.CardView

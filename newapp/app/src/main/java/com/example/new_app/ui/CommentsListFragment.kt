@@ -1,32 +1,24 @@
 package com.example.new_app.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
+import com.example.new_app.adapter.CommentAdapter
+import com.example.new_app.adapter.ConferenceAdapter
+import com.example.new_app.viewmodel.CommentsViewModel
+import com.example.new_app.viewmodel.ConferencesViewModel
 
-//
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CommentsListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CommentsListFragment : Fragment() {
-    //
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -35,25 +27,25 @@ class CommentsListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comments_list, container, false)
+        val ll = inflater.inflate(R.layout.fragment_comments_list, container, false)
+        val commentsViewModel = CommentsViewModel()
+        val commentsList = commentsViewModel.listComments.value
+        val recycler = ll.findViewById<RecyclerView>(R.id.comments_recycler)
+
+        if (recycler != null) {
+            recycler.adapter = commentsList?.let { CommentAdapter(it) }
+        }
+        else{
+            Log.d("CommentsRecycler", "Recycler is null")
+        }
+        return ll
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CommentsListFragment.
-         */
-        // Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             CommentsListFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }

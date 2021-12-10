@@ -5,13 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SpeakersListFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_speaker"
-        android:id="@+id/speakers_recycler"/>
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_speaker"
+        android:layout_gravity="center_horizontal">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_speaker"
+            android:id="@+id/speakers_recycler"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_speaker"
+            android:id="@+id/speakers_recycler2"/>
+    </LinearLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
