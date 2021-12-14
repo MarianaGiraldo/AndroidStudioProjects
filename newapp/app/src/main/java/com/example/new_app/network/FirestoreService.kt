@@ -1,21 +1,24 @@
 package com.example.new_app.network
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.example.new_app.models.Comment
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
-import com.google.firebase.firestore.FirebaseFirestore //conection
-import com.google.firebase.firestore.FirebaseFirestoreSettings //config
-import com.google.firebase.firestore.ktx.toObjects
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+import java.util.*
 
 
 class FirestoreService {
-    private val firebaseFirestore = FirebaseFirestore.getInstance()
+    private var firebaseFirestore : FirebaseFirestore = FirebaseFirestore.getInstance()
     private val settings = FirebaseFirestoreSettings.Builder().setPersistenceEnabled(true).build()
+    val listComments = MutableLiveData<List<Comment>>()
 
     init{
         firebaseFirestore.firestoreSettings = settings
     }
+
 
     fun getConferences(callback: Callback<List<Conference>>){
         firebaseFirestore.collection("conferences")
@@ -49,6 +52,7 @@ class FirestoreService {
     }
 
     fun getComments(callback: Callback<List<Comment>>){
+        Log.i("FirestoreService","Inside getComments")
         firebaseFirestore.collection("comments")
             .orderBy("name")
             .get()
@@ -57,6 +61,7 @@ class FirestoreService {
                 for (doc in result){
                     val list = result.toObjects(Comment::class.java)
                     callback.onSuccess(list)
+                    Log.i("GetComments","Success on getComments Firestore Service")
                     break
                 }
             }

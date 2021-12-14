@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
+import com.example.new_app.R.id.titulo
 import com.example.new_app.models.Conference
 
 class ConferenceAdapter(private val listConferences: List<Conference>): RecyclerView.Adapter<ConferenceAdapter.ViewHolder>() {
@@ -25,16 +26,16 @@ class ConferenceAdapter(private val listConferences: List<Conference>): Recycler
 
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        private val title: TextView = view.findViewById(R.id.titulo)
+        private val title: TextView = view.findViewById(titulo)
         private val desc: TextView = view.findViewById(R.id.desc_evento)
         private val time: TextView = view.findViewById(R.id.hora)
         private val date: TextView = view.findViewById(R.id.fecha_evento)
 
         fun bind(conference: Conference) {
-            title.text = conference.title
             desc.text = conference.description
             time.text = conference.datetime.time.toString()
             date.text = conference.datetime.toString()
+            title.text = conference.title
         }
     }
 }

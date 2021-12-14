@@ -63,6 +63,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-config-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
 
     implementation 'com.github.akshaaatt:Sliding-Carousel:1.0.1'
 }

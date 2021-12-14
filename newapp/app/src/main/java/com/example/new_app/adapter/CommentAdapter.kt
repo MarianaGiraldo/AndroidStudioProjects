@@ -11,12 +11,12 @@ import com.example.new_app.models.Comment
 class CommentAdapter(private val listComments: List<Comment>): RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        private val user_image: TextView = view.findViewById(R.id.user_image)
+        //private val user_image: TextView = view.findViewById(R.id.user_image)
         private val user_name: TextView = view.findViewById(R.id.user_name)
-        private val comment_text: TextView = view.findViewById(R.id.image)
+        private val comment_text: TextView = view.findViewById(R.id.comment_text)
 
         fun bind(comment: Comment) {
-            user_image.text = comment.user_image
+            //user_image.text = comment.user_image
             user_name.text = comment.user_name
             comment_text.text = comment.comment_text
         }
