@@ -8,25 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
-import com.example.new_app.adapter.ConferenceAdapter
 import com.example.new_app.adapter.SpeakerAdapter
-import com.example.new_app.viewmodel.ConferencesViewModel
 import com.example.new_app.viewmodel.SpeakersViewModel
 
 class SpeakersListFragment : Fragment() {
+    private val speakersViewModel = SpeakersViewModel()
+    private lateinit var recycler:RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
-        /*
-        val recycler = view?.findViewById<RecyclerView>(R.id.speakers_recycler)
-        val speakersViewModel = SpeakersViewModel()
-        if (recycler != null) {
-            recycler.adapter = SpeakerAdapter(speakersViewModel.listSpeakers.value!!)
-        }
-
-         */
+        this.speakersViewModel.refresh()
     }
 
     override fun onCreateView(
@@ -35,22 +28,21 @@ class SpeakersListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_speakers_list, container, false)
-        val speakersViewModel = SpeakersViewModel()
-        val speakersList = speakersViewModel.listSpeakers.value
-        val recycler = ll.findViewById<RecyclerView>(R.id.speakers_recycler)
+        this.recycler = ll.findViewById(R.id.speakers_recycler)
 
-        if (recycler != null) {
-            if(speakersList != null) {
-                recycler.adapter = SpeakerAdapter(speakersList)
+        return ll
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        this.speakersViewModel.listSpeakers.observe(viewLifecycleOwner, { listSpeakers ->
+            if(listSpeakers != null){
+                recycler.adapter = SpeakerAdapter(listSpeakers)
             }
             else{
-                Log.w("SpeakersList", "List is null")
+                Log.w("onViewCreatedSpeakers", "Speakers List is null")
             }
-        }
-        else{
-            Log.w("SpeakerRecycler", "Recycler is null")
-        }
-        return ll
+        })
     }
 
     companion object {

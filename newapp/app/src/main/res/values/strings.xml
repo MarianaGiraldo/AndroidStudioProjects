@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">BootCamp_592</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button">Button</string>
     <string name="todo">TODO</string>
 
     <string name="titulo_evento">¿Qué es BootCamp_592?</string>
@@ -12,12 +10,8 @@
     <string name="floating_button">floating button</string>
     <string name="desc_video_home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.</string>
 
-    <string name="titulo_agenda">Agenda</string>
     <string name="fecha1">22 Octubre</string>
-    <string name="fecha2">28 Octubre</string>
-    <string name="fecha3">30 Octubre</string>
     <string name="desc_fecha">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius.</string>
-    <string name="ver_mas">Ver más…</string>
 
     <string name="titulo_evento1">Título del evento</string>
     <string name="desc_evento1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nunc quis ipsum pharetra, nec tristique lorem varius. Suspendisse sapien ex, varius ut porttitor ornare, ultricies non neque. Duis ac aliquam lorem. Proin rutrum orci eget magna vulputate, ac blandit urna convallis.
@@ -45,17 +39,11 @@
     <string name="img_evento">img_evento</string>
     <string name="ubicacion_evento_detalle">Ubicación</string>
 
-    <string name="home_icon">home icon</string>
-    <string name="agenda_icon">agenda icon</string>
-    <string name="speakers_icon">speakers icon</string>
-    <string name="comments_icon">comments icon</string>
     <string name="logo_sena">logo sena</string>
-    <string name="calendar_image">calendar image</string>
     <string name="home">Home</string>
     <string name="agenda">Agenda</string>
     <string name="speakers">Speakers</string>
     <string name="comments">Comments</string>
-    <string name="am">am</string>
     <string name="user_name">User name</string>
 
 </resources>

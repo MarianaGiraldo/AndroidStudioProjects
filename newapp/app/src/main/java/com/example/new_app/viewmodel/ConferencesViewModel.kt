@@ -31,10 +31,12 @@ class ConferencesViewModel {
         firebaseFirestore.collection("conferences").addSnapshotListener{
                 snapshot, e ->
             run {
+                Log.d("ConferencesListener", "ListenToConferences is running")
                 if (e != null) {
                     Log.w("FireStoreServiceListen", "Listen Failed", e)
                     return@addSnapshotListener
                 }
+                Log.d("ConferencesListener", "Error is null. Listener running")
                 if (snapshot != null) {
                     val allConferences = ArrayList<Conference>()
                     val documents = snapshot.documents
@@ -43,10 +45,11 @@ class ConferencesViewModel {
                         if (conference != null){
                             allConferences.add(conference)
                         }
-                        Log.d("ConferencesList", "Conferences added: "+ _listConferences.value.toString())
+                        Log.d("ConferencesList", "Conference added: "+ _listConferences.value.toString())
                         processFinished()
                     }
                     _listConferences.value = allConferences
+                    Log.d("ConferencesListener", "ListConferences size is: " + (_listConferences.value as ArrayList<Conference>).size)
                 }
                 else{
                     Log.w("FireStoreServiceListen", "Snapshot is null", e)

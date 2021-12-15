@@ -35,6 +35,4 @@ class CommentAdapter(private val listComments: List<Comment>): RecyclerView.Adap
         holder.bind(comment)
     }
 
-
-
 }

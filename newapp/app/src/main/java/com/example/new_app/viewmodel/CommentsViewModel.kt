@@ -43,7 +43,7 @@ class CommentsViewModel {
                         if (comment != null){
                             allComments.add(comment)
                         }
-                        Log.d("CommentsList", "Comments añadidos: "+ _listComments.value.toString())
+                        Log.d("CommentsList", "Comment added: "+ _listComments.value.toString())
                         processFinished()
                     }
                     _listComments.value = allComments
@@ -71,7 +71,7 @@ class CommentsViewModel {
 
      */
 
-    fun processFinished(){
+    private fun processFinished(){
         isLoading.value = true
     }
 

@@ -23,38 +23,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/hora"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="5"
-                android:layout_gravity="center_vertical"
-                tools:ignore="NestedWeights">
-                <TextView
-                    android:id="@+id/hora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hora_evento"
-                    android:textSize="@dimen/tam_hora_item_evento"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_vertical"
-                     />
-                <TextView
-                    android:id="@+id/am_pm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/am"
-                    android:textSize="@dimen/tam_hora_item_evento"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_vertical"
-                    />
-            </LinearLayout>
+                android:text="@string/hora_evento"
+                android:textSize="@dimen/tam_hora_item_evento"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:layout_weight="4"
+                tools:ignore="NestedWeights" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@color/dark_green_sena"
-                android:layout_weight="0.4"/>
+                android:layout_weight="0.3"/>
             <TextView
                 android:id="@+id/fecha_evento"
                 android:layout_width="match_parent"

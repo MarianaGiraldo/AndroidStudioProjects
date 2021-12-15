@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tam_logo">50dp</dimen>
-    <dimen name="tam_icon">30dp</dimen>
-    <dimen name="marginx_icon">10dp</dimen>
-    <dimen name="margin_topiconos">5dp</dimen>
-    <dimen name="height_toolbar_icons">38dp</dimen>
 
     <dimen name="cornerCardHome">15dp</dimen>
     <dimen name="elevationCarHome">10dp</dimen>
-    <dimen name="altoBanner">145dp</dimen>
     <dimen name="altoView">3dp</dimen>
 
     <dimen name="margin_home">15dp</dimen>
@@ -16,10 +11,6 @@
     <dimen name="titulo_evento">18sp</dimen>
     <dimen name="desc_evento">13sp</dimen>
 
-    <dimen name="tam_logo_splash">200dp</dimen>
-
-    <dimen name="width_calendar_agenda">380dp</dimen>
-    <dimen name="height_calendar_agenda">250dp</dimen>
     <dimen name="margin_agenda">10dp</dimen>
     <dimen name="margin_Titulo_agenda">20dp</dimen>
 
@@ -27,7 +18,6 @@
     <dimen name="titulos_fragment">30sp</dimen>
     <dimen name="height_evento_img">240dp</dimen>
     <dimen name="Speaker_titulo">20sp</dimen>
-    <dimen name="margin_speaker">100dp</dimen>
     <dimen name="padding_speaker">10dp</dimen>
     <dimen name="tam_desc_comentarios">20sp</dimen>
 
@@ -35,11 +25,9 @@
     <dimen name="tam_nombre_speaker_item">15sp</dimen>
     <dimen name="hight_banner">100dp</dimen>
     <dimen name="tit_evento_banner">40sp</dimen>
-    <dimen name="margin_card_evento_detalle">10dp</dimen>
     <dimen name="tam_nombre_expositor">28sp</dimen>
     <dimen name="tam_dets_evento">18sp</dimen>
 
-    <dimen name="view_item_evento">2dp</dimen>
     <dimen name="tam_hora_item_evento">25sp</dimen>
     <dimen name="marginb_main2">60dp</dimen>
     <dimen name="padding_speakers">10dp</dimen>
