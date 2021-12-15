@@ -35,13 +35,16 @@ class AgendaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.fragment_evento_detalle, container, false)
 
+        val view = inflater.inflate(R.layout.fragment_evento_detalle, container, false)
+        /*
         v = view?.findViewById(R.id.calendarView) as CalendarView
         v!!.setOnDateChangeListener { _, year, month, dayOfMonth ->
             /* date = Date(year, month, dayOfMonth) */
             date2= GregorianCalendar(year, month, dayOfMonth)
         }
+
+         */
 
         return view
     }

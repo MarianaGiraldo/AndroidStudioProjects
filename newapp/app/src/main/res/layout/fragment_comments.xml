@@ -39,93 +39,6 @@
                 android:tag="comments_recycler"
                 android:name="com.example.new_app.ui.CommentsListFragment"/>
 
-            <!--
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:elevation="@dimen/elevationCarHome"
-                android:layout_margin="@dimen/margin_agenda"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/padding_speaker">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_account_circle_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/speaker_icon" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/comment1"
-                        android:textSize="@dimen/desc_evento"
-                        android:layout_weight="3"
-                        />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:elevation="@dimen/elevationCarHome"
-                android:layout_margin="@dimen/margin_agenda"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/padding_speaker">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_account_circle_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/speaker_icon" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/comment1"
-                        android:textSize="@dimen/desc_evento"
-                        android:layout_weight="3"
-                        />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:elevation="@dimen/elevationCarHome"
-                android:layout_margin="@dimen/margin_agenda"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/padding_speaker">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_account_circle_24"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/speaker_icon" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/comment1"
-                        android:textSize="@dimen/desc_evento"
-                        android:layout_weight="3"
-                        />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            -->
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,8 +54,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="0dp"
                     android:layout_height="80dp"
-                    android:background="@color/dark_gray"
-                    android:alpha="0.08"
+                    android:background="@color/cardview_dark_background"
+                    android:alpha="0.2"
                     android:layout_marginStart="@dimen/margin_agenda"
                     android:layout_weight="6"/>
                 <LinearLayout

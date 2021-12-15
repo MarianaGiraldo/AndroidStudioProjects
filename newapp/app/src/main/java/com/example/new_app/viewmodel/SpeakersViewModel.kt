@@ -2,14 +2,10 @@ package com.example.new_app.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.example.new_app.models.Conference
 import com.example.new_app.models.Speaker
-import com.example.new_app.network.Callback
-import com.example.new_app.network.FirestoreService
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
-import java.lang.Exception
-import java.util.ArrayList
+import java.util.*
 
 class SpeakersViewModel {
     private var firebaseFirestore : FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -46,7 +42,7 @@ class SpeakersViewModel {
                         if (speaker != null){
                             allSpeakers.add(speaker)
                         }
-                        Log.d("SpeakersList", "Conference added: "+ _listSpeakers.value.toString())
+                        Log.d("SpeakersList", "Speaker added: "+ _listSpeakers.value.toString())
                         processFinished()
                     }
                     _listSpeakers.value = allSpeakers

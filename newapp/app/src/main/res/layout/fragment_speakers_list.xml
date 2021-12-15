@@ -12,14 +12,16 @@
         android:padding="@dimen/padding_speaker"
         android:layout_gravity="center_horizontal">
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_speaker"
             android:id="@+id/speakers_recycler"/>
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_speaker"
             android:id="@+id/speakers_recycler2"/>
@@ -35,6 +37,7 @@
             android:layout_height="match_parent"
             android:background="@color/dark_gray"
             android:alpha="0.5" />
+
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

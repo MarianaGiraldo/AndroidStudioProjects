@@ -14,6 +14,7 @@ import com.example.new_app.viewmodel.SpeakersViewModel
 class SpeakersListFragment : Fragment() {
     private val speakersViewModel = SpeakersViewModel()
     private lateinit var recycler:RecyclerView
+    private lateinit var recycler2:RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class SpeakersListFragment : Fragment() {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_speakers_list, container, false)
         this.recycler = ll.findViewById(R.id.speakers_recycler)
+        this.recycler2 = ll.findViewById(R.id.speakers_recycler2)
 
         return ll
     }
@@ -37,7 +39,14 @@ class SpeakersListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         this.speakersViewModel.listSpeakers.observe(viewLifecycleOwner, { listSpeakers ->
             if(listSpeakers != null){
-                recycler.adapter = SpeakerAdapter(listSpeakers)
+                val n = listSpeakers.size    // get the size of the list
+
+                val first = listSpeakers.subList(0, (n + 1) / 2)
+                Log.i("SpeakersList", "First List size = " + first.size)
+                val second = listSpeakers.subList((n + 1) / 2, n)
+                Log.i("SpeakersList", "Second List size = " + second.size)
+                this.recycler.adapter = SpeakerAdapter(first)
+                this.recycler2.adapter = SpeakerAdapter(second)
             }
             else{
                 Log.w("onViewCreatedSpeakers", "Speakers List is null")
