@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="@dimen/corners_items"
     android:elevation="@dimen/elevationCarHome"
     android:layout_marginStart="@dimen/margin_agenda"
     android:layout_marginEnd="@dimen/margin_agenda"
@@ -46,9 +46,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="@string/fecha1"
-                android:textSize="@dimen/titulo_evento"
+                android:textSize="12sp"
                 android:textAlignment="center"
-                android:layout_weight="4"/>
+                android:layout_weight="5"/>
         </LinearLayout>
         <View
             android:layout_width="0dp"

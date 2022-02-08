@@ -178,6 +178,8 @@ class MainActivity : AppCompatActivity() {
         //Navigation
         findViewById<Toolbar>(R.id.toolbar).apply {
             setSupportActionBar(this)
+            supportActionBar?.title = null
+            supportActionBar?.setDisplayShowTitleEnabled(false)
         }
 
         val host: NavHostFragment = supportFragmentManager
@@ -192,18 +194,6 @@ class MainActivity : AppCompatActivity() {
 
         setupBottomNavMenu(navController)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            val dest: String = try {
-                resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                destination.id.toString()
-            }
-
-            Toast.makeText(this@MainActivity, "Navigated to $dest",
-                Toast.LENGTH_SHORT).show()
-            Log.d("NavigationActivity", "Navigated to $dest")
-        }
-
     }
     private fun setupBottomNavMenu(navController: NavController) {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bNMenu)
@@ -213,15 +203,6 @@ class MainActivity : AppCompatActivity() {
     private fun setupActionBar(navController: NavController,
                                appBarConfig : AppBarConfiguration) {
         setupActionBarWithNavController(navController, appBarConfig)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(findNavController(R.id.nav_host_fragment))
-                || super.onOptionsItemSelected(item)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return findNavController(R.id.nav_host_fragment).navigateUp(appBarConfiguration)
     }
 
 

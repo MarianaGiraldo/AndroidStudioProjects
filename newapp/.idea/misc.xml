@@ -50,6 +50,17 @@
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speaker_info.xml" value="0.28958333333333336" />
         <entry key="..\:/Users/SENA/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/drawable/shape_items.xml" value="0.1375" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/activity_splash.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_comments_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_eventos_list.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_home.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/fragment_speakers_list.xml" value="0.33" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/item_comment.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/item_evento.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/SENA/Documents/Downloads/AndroidStudioProjects/newapp/app/src/main/res/layout/item_speaker.xml" value="0.5" />
       </map>
     </option>
   </component>

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
@@ -15,6 +16,8 @@ class SpeakersListFragment : Fragment() {
     private val speakersViewModel = SpeakersViewModel()
     private lateinit var recycler:RecyclerView
     private lateinit var recycler2:RecyclerView
+    private lateinit var viewAlpha:View
+    private lateinit var pgbar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +34,16 @@ class SpeakersListFragment : Fragment() {
         val ll = inflater.inflate(R.layout.fragment_speakers_list, container, false)
         this.recycler = ll.findViewById(R.id.speakers_recycler)
         this.recycler2 = ll.findViewById(R.id.speakers_recycler2)
+        this.viewAlpha = ll.findViewById(R.id.view_speakersList)
+        this.pgbar = ll.findViewById(R.id.pgbar_speakersList)
 
         return ll
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.speakersViewModel.listSpeakers.observe(viewLifecycleOwner, { listSpeakers ->
-            if(listSpeakers != null){
+        this.speakersViewModel.listSpeakers.observe(viewLifecycleOwner) { listSpeakers ->
+            if (listSpeakers != null) {
                 val n = listSpeakers.size    // get the size of the list
 
                 val first = listSpeakers.subList(0, (n + 1) / 2)
@@ -47,11 +52,12 @@ class SpeakersListFragment : Fragment() {
                 Log.i("SpeakersList", "Second List size = " + second.size)
                 this.recycler.adapter = SpeakerAdapter(first)
                 this.recycler2.adapter = SpeakerAdapter(second)
-            }
-            else{
+                viewAlpha.visibility = View.INVISIBLE
+                pgbar.visibility = View.INVISIBLE
+            } else {
                 Log.w("onViewCreatedSpeakers", "Speakers List is null")
             }
-        })
+        }
     }
 
     companion object {
