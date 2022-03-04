@@ -15,11 +15,6 @@ import com.limerse.slider.ImageCarousel
 import com.limerse.slider.model.CarouselItem
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
 
     private var videoView: VideoView? = null
@@ -140,18 +135,4 @@ class HomeFragment : Fragment() {
         videoView?.let { outState.putInt(PLAYBACK_TIME, it.currentPosition) }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         *
-         */
-
-        @JvmStatic
-        fun newInstance() =
-            HomeFragment().apply {
-
-            }
-    }
 }

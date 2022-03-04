@@ -6,13 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
 import com.example.new_app.adapter.ConferenceAdapter
+import com.example.new_app.adapter.ConferenceListener
+import com.example.new_app.models.Conference
+import com.example.new_app.models.Speaker
 import com.example.new_app.viewmodel.ConferencesViewModel
 
-class EventosListFragment : Fragment() {
+class EventosListFragment : Fragment(), ConferenceListener {
     private val conferencesViewModel = ConferencesViewModel()
     private lateinit var recycler:RecyclerView
     private lateinit var viewAlpha:View
@@ -20,8 +25,6 @@ class EventosListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
         this.conferencesViewModel.refresh()
     }
 
@@ -41,7 +44,7 @@ class EventosListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         conferencesViewModel.listConferences.observe(viewLifecycleOwner) { listConferences ->
             if (listConferences != null) {
-                recycler.adapter = ConferenceAdapter(listConferences)
+                recycler.adapter = ConferenceAdapter(listConferences, this)
                 viewAlpha.visibility = View.INVISIBLE
                 pgbar.visibility = View.INVISIBLE
             } else {
@@ -50,12 +53,12 @@ class EventosListFragment : Fragment() {
         }
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            EventosListFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
+    override fun onConferenceClicked(conference: Conference, position: Int){
+        var bundle = bundleOf("conference" to conference)
+        findNavController().navigate(
+            R.id.fragment_evento_detalle,
+            bundle
+        )
     }
+
 }

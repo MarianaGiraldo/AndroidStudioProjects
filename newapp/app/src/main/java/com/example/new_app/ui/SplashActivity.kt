@@ -9,7 +9,7 @@ import android.os.Looper
 import com.example.new_app.MainActivity
 import com.example.new_app.R
 
-private const val tiempo:Long=600
+private const val time:Long=600
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +19,6 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, tiempo)
+        }, time)
     }
 }

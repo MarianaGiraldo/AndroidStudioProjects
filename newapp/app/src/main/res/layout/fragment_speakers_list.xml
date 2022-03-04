@@ -5,30 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="800dp"
     tools:context=".ui.SpeakersListFragment">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="@dimen/padding_speaker"
-        android:layout_gravity="center_horizontal">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_speaker"
-            android:id="@+id/speakers_recycler"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_speaker"
-            android:id="@+id/speakers_recycler2"/>
-    </LinearLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_speaker"
+        android:id="@+id/speakers_recycler"
+        android:layout_marginHorizontal="20dp"
+        />
 
     <RelativeLayout
+        android:id="@+id/rl_speakers_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 

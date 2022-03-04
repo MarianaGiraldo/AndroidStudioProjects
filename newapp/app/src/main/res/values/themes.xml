@@ -10,7 +10,42 @@
         <item name="colorSecondaryVariant">@color/dark_green_sena</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/dark_green_sena</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
+
     </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_green_sena</item>
+        <item name="colorPrimaryVariant">@color/orange_sena</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange_sena</item>
+        <item name="colorSecondaryVariant">@color/dark_green_sena</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
+
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+
+    </style>
+
+    <style name="Theme.Newapp.Fullscreen" parent="Theme.Newapp">
+        <item name="android:actionBarStyle">@style/Widget.Theme.Newapp.ActionBar.Fullscreen</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ThemeOverlay.Newapp.FullscreenContainer" parent="Theme.Newapp.Fullscreen">
+        <item name="fullscreenBackgroundColor">@color/white</item>
+    </style>
+
 </resources>

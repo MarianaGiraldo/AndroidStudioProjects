@@ -3,23 +3,17 @@ package com.example.new_app.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.new_app.models.Conference
-import com.example.new_app.network.Callback
-import com.example.new_app.network.FirestoreService
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
-import java.lang.Exception
-import java.util.ArrayList
 
 class ConferencesViewModel {
     private var firebaseFirestore : FirebaseFirestore = FirebaseFirestore.getInstance()
     private val settings = FirebaseFirestoreSettings.Builder().setPersistenceEnabled(true).build()
-    //private val firestoreService = FirestoreService()
     private var _listConferences = MutableLiveData<List<Conference>>()
     private val isLoading = MutableLiveData<Boolean>()
 
     fun refresh(){
         firebaseFirestore.firestoreSettings = settings
-        //conferencesFromFirebase()
         listentoConferences()
     }
 
@@ -57,22 +51,6 @@ class ConferencesViewModel {
             }
         }
     }
-    /*
-    private fun conferencesFromFirebase(){
-        firestoreService.getConferences(object : Callback<List<Conference>>{
-            override fun onSuccess(result: List<Conference>?) {
-                _listConferences.postValue(result)
-                Log.d("ConferencesList", "Conferencias añadidas: "+ _listConferences.value.toString())
-                processFinished()
-            }
-
-            override fun onFailed(exception: Exception) {
-                processFinished()
-            }
-        })
-    }
-
-     */
 
     private fun processFinished(){
         isLoading.value = true

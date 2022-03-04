@@ -1,3 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+
+    <style name="ThemeOverlay.Newapp.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/green_sena_dark</item>
+        <item name="fullscreenTextColor">@color/white</item>
+    </style>
 </resources>

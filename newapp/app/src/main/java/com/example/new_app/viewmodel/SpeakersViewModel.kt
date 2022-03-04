@@ -10,13 +10,12 @@ import java.util.*
 class SpeakersViewModel {
     private var firebaseFirestore : FirebaseFirestore = FirebaseFirestore.getInstance()
     private val settings = FirebaseFirestoreSettings.Builder().setPersistenceEnabled(true).build()
-    //private val firestoreService = FirestoreService()
     private var _listSpeakers = MutableLiveData<List<Speaker>>()
-    private val isLoading = MutableLiveData<Boolean>()
+    val isLoading = MutableLiveData<Boolean>()
     private val TAG = "SpeakersListener"
 
     fun refresh(){
-        //speakersFromFirebase()
+        firebaseFirestore.firestoreSettings = settings
         listentoSpeakers()
     }
 
@@ -42,7 +41,6 @@ class SpeakersViewModel {
                         if (speaker != null){
                             allSpeakers.add(speaker)
                         }
-                        Log.d("SpeakersList", "Speaker added: "+ _listSpeakers.value.toString())
                         processFinished()
                     }
                     _listSpeakers.value = allSpeakers
@@ -54,22 +52,6 @@ class SpeakersViewModel {
             }
         }
     }
-
-    /*
-    private fun speakersFromFirebase(){
-        firestoreService.getSpeakers(object : Callback<List<Speaker>> {
-            override fun onSuccess(result: List<Speaker>?) {
-                listSpeakers.postValue(result)
-                processFinished()
-            }
-
-            override fun onFailed(exception: Exception) {
-                processFinished()
-            }
-        })
-    }
-
-     */
 
     private fun processFinished(){
         isLoading.value = true

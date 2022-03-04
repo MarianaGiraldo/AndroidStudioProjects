@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.new_app.R
 import com.example.new_app.adapter.CommentAdapter
+import com.example.new_app.models.Comment
 import com.example.new_app.viewmodel.CommentsViewModel
 
 class CommentsListFragment : Fragment() {
@@ -52,12 +55,5 @@ class CommentsListFragment : Fragment() {
     }
 
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            CommentsListFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
-    }
+
 }

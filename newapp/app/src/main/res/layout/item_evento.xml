@@ -23,18 +23,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/hora"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:text="@string/hora_evento"
-                android:textSize="@dimen/tam_hora_item_evento"
-                android:textStyle="bold"
+                android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_vertical"
-                android:layout_weight="4"
-                tools:ignore="NestedWeights" />
+                android:layout_weight="5"
+                tools:ignore="NestedWeights">
+                <TextView
+                    android:id="@+id/hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hora_evento"
+                    android:textSize="@dimen/tam_hora_item_evento"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/AmPm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="am"
+                    android:textSize="@dimen/tam_hora_item_evento"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -46,9 +59,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="@string/fecha1"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textAlignment="center"
-                android:layout_weight="5"/>
+                android:layout_weight="3"/>
         </LinearLayout>
         <View
             android:layout_width="0dp"

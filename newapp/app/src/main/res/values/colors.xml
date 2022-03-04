@@ -5,4 +5,11 @@
     <color name="orange_sena">#FFFC7323</color>
     <color name="dark_gray">#FF272727</color>
     <color name="dark_green_sena">#FF238276</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#003560</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="green_sena_dark">#0C2C28</color>
 </resources>

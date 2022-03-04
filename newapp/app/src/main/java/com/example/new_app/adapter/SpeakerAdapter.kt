@@ -1,24 +1,27 @@
 package com.example.new_app.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.new_app.R
 import com.example.new_app.models.Speaker
 
 
-class SpeakerAdapter(private val listSpeakers: List<Speaker>): RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
+class SpeakerAdapter(private val listSpeakers: List<Speaker>, private val speakerListener:SpeakerListener): RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val name: TextView = view.findViewById(R.id.name)
-        private val image: ImageView = view.findViewById(R.id.image)
+        val image: ImageView = view.findViewById(R.id.image)
 
         fun bind(speaker: Speaker) {
             name.text = speaker.name
-            //image.setImageBitmap(getImageBitmap(speaker.image))
+
         }
     }
 
@@ -32,32 +35,21 @@ class SpeakerAdapter(private val listSpeakers: List<Speaker>): RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val speaker = listSpeakers[position]
-        holder.bind(speaker)
-    }
-    /*
-    private fun getURI(IMAGE_URL: String): Uri? {
-        return (if (URLUtil.isValidUrl(IMAGE_URL)) {
-            //  an external URL
-            Uri.parse(IMAGE_URL)
-        } else { //  a raw resource
-            null
-        })
-    }
-    private fun getImageBitmap(url: String): Bitmap? {
-        var bm: Bitmap? = null
         try {
-            val aURL = URL(url)
-            val conn = URL(url).openConnection() as HttpURLConnection
-            val `is`: InputStream = conn.inputStream
-            val bis = BufferedInputStream(`is`)
-            bm = BitmapFactory.decodeStream(bis)
-            bis.close()
-            `is`.close()
-        } catch (e: IOException) {
-            Log.e("SpeakerAdapter", "Error getting bitmap", e)
+            Glide.with(holder.itemView.context)
+                .load(speaker.image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder.image)
+            holder.bind(speaker)
+
+            holder.itemView.setOnClickListener{
+                speakerListener.onSpeakerClicked(speaker, position)
+            }
+
+        }catch (e: Exception){
+            Log.w("Imagen", "No cargó la imagen")
         }
-        return bm
+
     }
 
-     */
 }
