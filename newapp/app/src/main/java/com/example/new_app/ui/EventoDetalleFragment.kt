@@ -117,8 +117,7 @@ class EventoDetalleFragment  : DialogFragment(), OnMapReadyCallback {
         googleMap.addMarker(markerOptions)
         //TODO Listener
 
-
-}
+    }
 
 
 }
