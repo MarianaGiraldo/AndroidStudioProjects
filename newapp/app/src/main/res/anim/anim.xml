@@ -4,19 +4,19 @@
         android:fromAlpha="0.0"
         android:toAlpha="1.0"
         android:interpolator="@android:anim/accelerate_interpolator"
-        android:duration="500"
+        android:duration="400"
         android:repeatMode="reverse"
-        android:repeatCoount="4"
+        android:repeatCount="4"
         />
     <scale
-        android:duration="500"
-        android:pivotX=""
-        android:pivotY=""
+        android:duration="400"
+        android:pivotX="50%"
+        android:pivotY="50%"
         android:repeatMode="reverse"
-        android:repeatCoount="4"
+        android:repeatCount="4"
         android:fromXScale="100%"
         android:fromYScale="100%"
         android:toXScale="110%"
         android:toYScale="110%"
-        />0
+        />
 </set>

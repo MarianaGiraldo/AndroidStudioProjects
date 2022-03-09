@@ -48,10 +48,19 @@
         android:id="@+id/fragment_evento_detalle"
         android:name="com.example.new_app.ui.EventoDetalleFragment"
         android:label="fragment_evento_detalle"
-        tools:layout="@layout/fragment_evento_detalle" />
+        tools:layout="@layout/fragment_evento_detalle" >
+        <action
+            android:id="@+id/action_fragment_evento_detalle_to_locationDetailsDialogFragment"
+            app:destination="@id/locationDetailsDialogFragment" />
+    </dialog>
     <dialog
         android:id="@+id/fragment_speaker_info"
         android:name="com.example.new_app.ui.SpeakerInfoFragment"
         android:label="fragment_speaker_info"
         tools:layout="@layout/fragment_speaker_info" />
+    <dialog
+        android:id="@+id/locationDetailsDialogFragment"
+        android:name="com.example.new_app.ui.LocationDetailsDialogFragment"
+        android:label="fragment_locationdetails_dialog"
+        tools:layout="@layout/fragment_locationdetails_dialog" />
 </navigation>

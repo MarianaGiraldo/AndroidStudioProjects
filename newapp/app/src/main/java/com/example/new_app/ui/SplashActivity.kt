@@ -12,7 +12,7 @@ import com.example.new_app.MainActivity
 import com.example.new_app.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
-private const val time:Long=400
+private const val time:Long=1500
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

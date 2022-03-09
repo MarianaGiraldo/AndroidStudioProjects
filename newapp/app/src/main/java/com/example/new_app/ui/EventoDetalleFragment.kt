@@ -11,17 +11,19 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import com.example.new_app.R
 import com.example.new_app.models.Conference
 import com.example.new_app.models.Location
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import java.util.*
 import kotlinx.android.synthetic.main.fragment_evento_detalle.*
 
 
-class EventoDetalleFragment  : DialogFragment(), OnMapReadyCallback {
+class EventoDetalleFragment  : DialogFragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private lateinit var mapView: MapView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,7 +102,6 @@ class EventoDetalleFragment  : DialogFragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         val location = Location()
-        Log.d("onMapReady", "Location got: " + location.latitude)
 
         //Zoom level
         val zoom = 16f
@@ -115,8 +116,14 @@ class EventoDetalleFragment  : DialogFragment(), OnMapReadyCallback {
 
         markerOptions.title("CBA")
         googleMap.addMarker(markerOptions)
-        //TODO Listener
 
+        googleMap.setOnMarkerClickListener(this)
+
+    }
+
+    override fun onMarkerClick(p0: Marker): Boolean {
+        findNavController().navigate(R.id.locationDetailsDialogFragment)
+        return true
     }
 
 

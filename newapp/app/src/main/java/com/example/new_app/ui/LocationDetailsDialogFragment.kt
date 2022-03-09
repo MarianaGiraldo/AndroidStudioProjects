@@ -22,7 +22,7 @@ import java.util.*
 import kotlinx.android.synthetic.main.fragment_locationdetails_dialog.*
 
 
-class LocationDetailsDialogFragment  : DialogFragment(), OnMapReadyCallback {
+class LocationDetailsDialogFragment  : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,8 +60,8 @@ class LocationDetailsDialogFragment  : DialogFragment(), OnMapReadyCallback {
             .apply(RequestOptions.circleCropTransform())
             .into(ivLocationImg) //Id de la imagen
 
-        //Para abrir el amrcador a travez de dial
-        //ll_tel_ubi es el id del linear layout
+        //Open Marker and dial phone
+        //llLocationPhone linear la
         llLocationPhone.setOnClickListener{
             val intent = Intent(Intent.ACTION_DIAL).apply{
                 data = Uri.parse("tel:${location.phone}")
@@ -72,9 +72,9 @@ class LocationDetailsDialogFragment  : DialogFragment(), OnMapReadyCallback {
 
         //Para abrir el navegador
         //ll_web_ubi es el id del linearlayout
-        ll_web_ubi.setOnClickListener{
-            val intent  = Intent(intent.ACTION_VIEW). apply{
-                intent.data = Uri.parse(location.website)
+        llLocationUrl.setOnClickListener{
+            val intent  = Intent(Intent.ACTION_VIEW). apply{
+                data = Uri.parse(location.website)
             }
             startActivity(intent)
         }
@@ -87,8 +87,4 @@ class LocationDetailsDialogFragment  : DialogFragment(), OnMapReadyCallback {
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
 
-
-    override fun onMapReady(p0: GoogleMap) {
-        TODO("Not yet implemented")
-    }
 }
