@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.MediaController
 import android.widget.Toast
 import android.widget.VideoView
@@ -29,6 +30,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.*
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private lateinit var remoteConfig: FirebaseRemoteConfig
     private var videoView: VideoView? = null
@@ -38,7 +40,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
         //Remote Config Firebase
         this.remoteConfig = Firebase.remoteConfig
@@ -174,14 +179,14 @@ class MainActivity : AppCompatActivity() {
         this.videoView?.setMediaController(controller)
 
 
-
-        //Navigation
+        //Toolbar
         findViewById<Toolbar>(R.id.toolbar).apply {
             setSupportActionBar(this)
             supportActionBar?.title = null
             supportActionBar?.setDisplayShowTitleEnabled(false)
         }
 
+        //Navigation
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
 

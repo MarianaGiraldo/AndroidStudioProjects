@@ -55,10 +55,13 @@ class LocationDetailsDialogFragment  : DialogFragment() {
 
         //Tratamiento de la imagen por Glide
 
+
         Glide.with(this)
-            .load(location.photo)
+            .load("location.photo")
+            .placeholder(R.drawable.cba)
             .apply(RequestOptions.circleCropTransform())
             .into(ivLocationImg) //Id de la imagen
+
 
         //Open Marker and dial phone
         //llLocationPhone linear la

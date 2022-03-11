@@ -7,6 +7,7 @@
     tools:context=".ui.SplashActivity"
     android:background="@color/dark_green_sena">
     <LinearLayout
+        android:id="@+id/llSplash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
@@ -25,30 +26,23 @@
             android:contentDescription="@string/logo_sena"
             android:layout_weight="2"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvSplashText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="@dimen/titulos_fragment"
-                android:textAlignment="center"
-                />
-
-        </LinearLayout>
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/titulos_fragment"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            />
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             />
     </LinearLayout>
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

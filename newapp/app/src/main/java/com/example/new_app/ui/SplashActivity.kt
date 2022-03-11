@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.example.new_app.MainActivity
@@ -13,21 +14,31 @@ import com.example.new_app.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 private const val time:Long=1500
+@Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout. activity_splash)
+
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, time)
 
-        var animation = AnimationUtils.loadAnimation(this, R.anim.anim)
-        ivSenaLogo.startAnimation(animation)
+        var animationText = AnimationUtils.loadAnimation(this, R.anim.anim)
+        tvSplashText.startAnimation(animationText)
 
-        animation.setAnimationListener(object: Animation.AnimationListener{
+        var animationLogo = AnimationUtils.loadAnimation(this, R.anim.animlogo)
+        ivSenaLogo.startAnimation(animationLogo)
+
+        animationText.setAnimationListener(object: Animation.AnimationListener{
             override fun onAnimationStart(p0: Animation?) {
             }
 
