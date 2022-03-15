@@ -59,7 +59,6 @@ class LocationDetailsDialogFragment  : DialogFragment() {
         Glide.with(this)
             .load("location.photo")
             .placeholder(R.drawable.cba)
-            .apply(RequestOptions.circleCropTransform())
             .into(ivLocationImg) //Id de la imagen
 
 

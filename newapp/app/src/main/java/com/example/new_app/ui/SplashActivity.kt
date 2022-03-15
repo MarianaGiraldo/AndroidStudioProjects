@@ -13,7 +13,7 @@ import com.example.new_app.MainActivity
 import com.example.new_app.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
-private const val time:Long=1500
+private const val time:Long=1600
 @Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {

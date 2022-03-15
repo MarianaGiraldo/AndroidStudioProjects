@@ -25,7 +25,8 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="55dp"
-        android:background="@color/white">
+        android:background="?attr/fullscreenBackgroundColor"
+        android:theme="@style/ThemeOverlay.Newapp.FullscreenContainer">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -151,7 +152,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_home">
+                    android:layout_margin="@dimen/margin_home"
+                    android:elevation="@dimen/elevationCarHome"
+                    app:cardCornerRadius="@dimen/cornerCardHome">
 
                     <LinearLayout
                         android:layout_width="match_parent"

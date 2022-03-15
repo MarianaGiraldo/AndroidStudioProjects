@@ -105,10 +105,8 @@ class HomeFragment : Fragment() {
         // Image URL with header
 
         list += CarouselItem(imageDrawable = R.drawable.img_1, caption = "Comienzo BootCamp")
-
         // Image drawable with caption
         list += CarouselItem(imageDrawable = R.drawable.img_2, caption = "BootCamp y SENA Digital")
-
         // Just image drawable
         list += CarouselItem(imageDrawable = R.drawable.img_3)
         list += CarouselItem(imageDrawable = R.drawable.img_4)
